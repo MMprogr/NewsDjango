@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
-
+import datetime
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -27,6 +27,14 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # Application definition
+
+SERIALIZATION_MODULES = {
+    'json': 'wadofstuff.django.serializers.json'
+}
+
+JWT_AUTH = {
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(hours=24)
+}
 
 INSTALLED_APPS = [
     'django.contrib.admin',

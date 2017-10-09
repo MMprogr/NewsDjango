@@ -26,7 +26,7 @@ router.register(r'users', views.UserViewSet)
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include(router.urls)),
-    url(r'^register/', obtain_jwt_token),
-    url(r'^token-refresh/', refresh_jwt_token),
-    url(r'^token-verify/', verify_jwt_token),
+    url(r'^token/register/', obtain_jwt_token),
+    url(r'^token/refresh/', refresh_jwt_token),
+    url(r'^token/verify/', verify_jwt_token),
 ]
